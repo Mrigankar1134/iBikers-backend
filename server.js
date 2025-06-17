@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5002;
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? '*' // Allow requests from any origin in production
-    : 'http://localhost:5173', // Allow requests from the frontend origin in development
+    : 'https://ibikers-backend.onrender.com', // Allow requests from the frontend origin in development
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   exposedHeaders: ['Content-Range', 'X-Content-Range'],

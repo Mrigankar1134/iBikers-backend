@@ -12,17 +12,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5002;
 
-// Middleware
+
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? '*' // Allow requests from any origin in production
-    : 'https://ibikers-backend.onrender.com', // Allow requests from the frontend origin in development
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  exposedHeaders: ['Content-Range', 'X-Content-Range'],
-  credentials: true, // Allow cookies and credentials
-  optionsSuccessStatus: 204,
-  preflightContinue: false
+  origin: 'https://ibikersss.netlify.app',
+  credentials: true,
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
